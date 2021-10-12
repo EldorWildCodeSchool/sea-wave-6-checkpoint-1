@@ -13,7 +13,7 @@ A: git status
 Q: What sequence of commands allows me to share new changes in a local repository with an (already configured) remote repository?
 A:  1. git add .
     2. git commit -m "meaningful description of the changes made"
-    3. git push origin main (master in the past)
+    3. git push origin <branch name>
 
 Q: What is the value of the expression (true && false)?
 A: false (but I had to check it with (System.out.println((true && false));)
