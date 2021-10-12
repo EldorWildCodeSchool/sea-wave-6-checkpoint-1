@@ -11,13 +11,21 @@ public class Support extends ITPerson {
 
     @Override
     public boolean hasReadAccess() {
-        // Add logic to evaluate Read access for Support here.
-        return false;
+        switch(this.level){
+            case 0 : return false;
+            case 1 : return true;
+            case 2 : return true;
+            default : return false;
+        }
     }
 
     @Override
     public boolean hasWriteAccess() {
-        // Add logic to evaluate Write access for Admin here.
-        return false;
+        switch(this.level){
+            case 0 : return false;
+            case 1 : return false;
+            case 2 : return true;
+            default : return false;
+        }
     }
 }

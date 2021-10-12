@@ -1,6 +1,7 @@
 package dev.wilders;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Developer extends ITPerson {
 
@@ -11,15 +12,18 @@ public class Developer extends ITPerson {
         this.employmentDate = employmentDate;
     }
 
+    private boolean isInTrialPeriod(){
+        long monthSinceEmpl = ChronoUnit.MONTHS.between(this.employmentDate, LocalDate.now());
+        return monthSinceEmpl < 6;
+    }
+
     @Override
     public boolean hasReadAccess() {
-        // Add logic to evaluate Read access for Developer here.
-        return false;
+        return true;
     }
 
     @Override
     public boolean hasWriteAccess() {
-        // Add logic to evaluate Write access for Developer here.
-        return false;
+        return !isInTrialPeriod();
     }
 }
