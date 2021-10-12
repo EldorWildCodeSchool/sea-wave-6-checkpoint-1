@@ -1,65 +1,76 @@
 Q: What is the default branch of a git repository called?
-A:
+A: main (master in the past)
 
 Q: How do you change branches using git?
-A:
+A: git checkout <branch name>
 
 Q: What is the command that allows you to create a local repository from a remote repository?
-A:
+A: git clone <repository url>
 
 Q: How do you check the status of the working directory of the local repository?
-A:
+A: git status
 
 Q: What sequence of commands allows me to share new changes in a local repository with an (already configured) remote repository?
-A:
+A:  1. git add .
+    2. git commit -m "meaningful description of the changes made"
+    3. git push origin main (master in the past)
 
 Q: What is the value of the expression (true && false)?
-A:
+A: false (but I had to check it with (System.out.println((true && false));)
 
 Q: How can you write `i = i + 1` more concisely?
-A:
+A: i++;
 
 Q: What does the term "concatenation" mean?
-A:
+A: Concatenation means the operation of joining character strings.
 
 Q: Why is the check for "equals" with (object == object) not reliable? What should you use for check of equal objects?
-A:
+A: "equals" defines how objects should be compared (internally) instead of checking if objects are the same object.
+To achieve such internal comparison, "equals"-method can be overridden.
 
 Q: What Collection implementation is ordered, but not sorted?
-A:
+A: List
 
 Q: What Collection implementation has only unique elements?
-A:
+A: Set
 
 Q: How can we find out the number of elements of an array named "students"?
-A:
+A: int arrLength = students.length();
 
 Q: How can we find out the number of elements of a list named "students"?
-A:
+A: int listSize = students.size();
 
 Q: In Java, what happens if I divide by Zero (eg. 8 / 0)?
-A:
+A: An ArithmeticException will be thrown
 
 Q: How can you check if File quiz = new File("quiz.txt") exists?
-A:
+A: File.exists(quiz);
 
 Q: Depending on some attributes, an object should return isAllowed(). Should the method be static or not, why?
-A:
+A: No, because this method has a relation to the instantiated object. Methods described in a static-context need no
+instantiation of an object and therefore can't be referenced by an object.
 
 Q: What is the signature of the `main` method of a class?
-A:
+A: public static void main (String[] args)
 
 Q: What is an instance of a class?
-A:
+A: A instance of a class is a (new) object which returns the reference to the allocated memory.
+By instantiating a class also the object constructor is invoked (at least the default constructor).
 
 Q: Which naming rule should you apply to the naming of a class?
-A:
+A: Class names should be nouns, in mixed case with the first letter of each internal word capitalized (Camel-Case)
 
 Q: Why should the usage of java.util.Date be avoided?
-A:
+A: Date is mutable and this is a risk because the Date-Object could be changed after instantiation.
 
 Q: What Java class do you use to store the Date "31.10.2021"?
-A:
+A: LocalDate
 
 Q: What is the advantage of using Generics?
-A:
+A: Generics help to reduce the amount af code used to solve a concrete problem, because
+   it becomes possible to pass different types of objects to generic classes or generic methods and, if necessary,
+   to get them back without having to implement the same code for every possible object type.
+   Generics are a way to shift the management of type safety from the developer to the compiler.
+   The validation for type safety will be achieved/enforced at compile time and not as first at runtime.
+   The need for type casting and the possibility of run-time errors are therefore reduced.
+   And maybe a better performance could be achieved?
