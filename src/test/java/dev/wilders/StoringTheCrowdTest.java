@@ -38,8 +38,8 @@ public class StoringTheCrowdTest {
         ITPerson person2 = new Developer("Best_Developer", LocalDate.now().minusYears(2));
         ITPerson person3 = new Support("Mega_Support", 2);
 
-        /* Uncomment this section once you implemented the GenericStorage
-        GenericStorage<ITPerson> itPersonStorage = new GenericStorage();
+        //Uncomment this section once you implemented the GenericStorage
+        GenericStorage<ITPerson> itPersonStorage = new GenericStorage<>();
         itPersonStorage.storePerson(person1);
         itPersonStorage.storePerson(person2);
         itPersonStorage.storePerson(person3);
@@ -51,7 +51,5 @@ public class StoringTheCrowdTest {
         // Assert
         assertEquals("Super_Admin", firstStoredPerson.getName());
         assertEquals("Mega_Support", lastStoredPerson.getName());
-        */
-
     }
 }
