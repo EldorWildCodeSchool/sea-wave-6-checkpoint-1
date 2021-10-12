@@ -3,8 +3,13 @@ package dev.wilders;
 public class ITPersonRepair {
 
     public static String repairName(ITPerson person) {
-        // Get the name of the ITPerson, repair it and return the new name
-        // EG: person.getName() -> "Super_Admin" -> return "Super Admin"
-        return "";
+        String[] tempArrName = person.getName().split("_");
+        if (tempArrName.length > 0) {
+            String tmpFirstName = tempArrName[0];
+            String tmpSecondName = tempArrName[1];
+            return (tmpFirstName + " " + tmpSecondName);
+        } else {
+            return person.getName();
+        }
     }
 }
