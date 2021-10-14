@@ -23,7 +23,7 @@ public class Admin extends ITPerson {
 
     @Override
     public boolean hasReadAccess() {
-        return !shouldRecert();
+        return true;
     }
 
     @Override

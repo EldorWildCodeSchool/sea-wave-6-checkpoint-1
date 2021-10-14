@@ -24,7 +24,7 @@ public class CheckITPersonAccessTest {
         ITPerson adminInvalid = new Admin("superadmin_invalid", lastCertificationOneYearAndOneDayAgo);
 
         // Act + Assert
-        assertFalse(adminInvalid.hasReadAccess(), "Invalid Admin should have no read access");
+        assertTrue(adminInvalid.hasReadAccess(), "Admin should always have read access");
         assertFalse(adminInvalid.hasWriteAccess(), "Invalid Admin should have no write access");
     }
 
