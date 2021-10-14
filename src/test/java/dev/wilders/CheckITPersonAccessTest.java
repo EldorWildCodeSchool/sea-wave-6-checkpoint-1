@@ -1,9 +1,7 @@
 package dev.wilders;
 
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -24,7 +22,7 @@ public class CheckITPersonAccessTest {
         ITPerson adminInvalid = new Admin("superadmin_invalid", lastCertificationOneYearAndOneDayAgo);
 
         // Act + Assert
-        assertTrue(adminInvalid.hasReadAccess(), "Admin should always have read access");
+        assertTrue(adminInvalid.hasReadAccess(), "Invalid Admin should always have read access");
         assertFalse(adminInvalid.hasWriteAccess(), "Invalid Admin should have no write access");
     }
 
@@ -36,7 +34,7 @@ public class CheckITPersonAccessTest {
 
         // Act + Assert
         assertTrue(developerValid.hasReadAccess(), "Developer should always have read access");
-        assertTrue(developerValid.hasWriteAccess(), "Developer should not have write access as she was employed only last month");
+        assertTrue(developerValid.hasWriteAccess(), "Developer should have write access as she was employed two years ago");
 
         // Arrange
         LocalDate developerHiredLessThanHalfYearAgo = LocalDate.now().minusMonths(6).plusDays(1);
